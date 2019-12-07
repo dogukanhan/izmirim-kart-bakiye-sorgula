@@ -1,6 +1,7 @@
 import requests
 import sys
 import re
+
 pattern = re.compile("[\d]{5}[-][\d]{5}[-][\d]")
 
 cookies = {
@@ -21,10 +22,6 @@ headers = {
     'Accept-Language': 'tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7',
 }
 
-
-
-
-
 if len(sys.argv) < 2:
 	print("Lutfen kart numarasini girin")
 	exit()
@@ -42,6 +39,3 @@ data = {
 response = requests.post('https://online.eshot.gov.tr/BakiyeSorgula/BakiyeSorgula/', headers=headers, cookies=cookies, data=data)
 
 print(response.text)
-
-
-
